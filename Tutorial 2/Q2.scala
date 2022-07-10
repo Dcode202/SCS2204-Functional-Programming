@@ -26,8 +26,8 @@ object Demo{
     c = c + 1
 
     print("e) ")
-    a = a + 1
-    println(c * a)
     c = c + 1
+    println(c * a)
+    a = a + 1
   }
 }
