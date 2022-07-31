@@ -7,6 +7,7 @@ object Q2 extends App{
     }
   }
 
+  print("Enter Number: ")
   val a = scala.io.StdIn.readInt()
   patternMatching(a)
 }
