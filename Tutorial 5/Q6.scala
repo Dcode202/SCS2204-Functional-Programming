@@ -19,7 +19,7 @@ object Q6 extends App{
     }
   }
 
-  var value = 5
+  var value = 10
   fibSeq(value-1)
   println()
 
