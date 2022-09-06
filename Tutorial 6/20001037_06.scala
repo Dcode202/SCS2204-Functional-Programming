@@ -4,18 +4,29 @@ object T6 extends App{
 
   val E = (c:Char,key:Int,a:String)=> a((a.indexOf(c.toUpper)+key)%a.size)
 
-  val D = (c:Char,key:Int,a:String)=> a((a.indexOf(c.toUpper)-key)%a.size)
+  def decrypt(char:Char, key:Int, a:String):Char = {
+
+      var index = a.indexOf(char.toUpper);
+
+      if (index - key < 0) {
+          return a(25 - (((25 - index) + key) % a.size));
+      }
+      else {
+          return a(index - key);
+      }
+
+  }
 
 
   val cipher=(algo:(Char,Int,String)=> Char,s:String,key:Int,a:String)=>
   s.map(algo(_,key,a))
 
-  var s = "hello"
+  var s = "applez"
 
-  val ct=cipher(E,s,5,alphabet)
+  val ct=cipher(E,s,1,alphabet)
   println(ct)
 
-  val pt=cipher(D,ct,5,alphabet)
+  val pt=cipher(decrypt,ct,1,alphabet)
   println(pt)
 
 }
